@@ -29,4 +29,9 @@ Route::get('/', function()
 	return View::make('dashboard.index');
 });
 
+Route::get('/login', function()
+{
+    return View::make('login');
+});
+
 Route::get('dashboard', 'DashboardController@index');
