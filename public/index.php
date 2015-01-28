@@ -6,10 +6,10 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
-define('APP_ID', 'CEk8QS5j93KUmYL1haytStiWyTJln6C8FCain0nh');
-define('REST_KEY', 'vDT0wCQfCCC6APjuErLO7fgwoDHU3eUVK6eRAicG');
-define('MASTER_KEY', 'gCAmWAxpukAH6XBdnJZZoV6iGcYqnrGrUnrQXfh3');
-define('JAVASCRIPT_KEY', '7nLkVgNcroo3WSfFXvexAjJ6U5cE7S7mhBh0EaWq');
+define('APP_ID', 'GEaK5y6RuTQSsJahVe40mB06qKdqNU43O3qnT4mY');
+define('REST_KEY', 'onel28dB2Wz3vJgTOxG04m9OcKrBKLzV3tTNu5vc');
+define('MASTER_KEY', 'AB1okIwq4yLvB9yJdN2AKJxuHpSI0KpCnBYU6laI');
+define('JAVASCRIPT_KEY', 'XBAfu3B03Od2NDPFJ32FKjITmCymVKnndVzpoRsh');
 
 /*
 |--------------------------------------------------------------------------
