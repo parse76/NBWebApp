@@ -56,6 +56,30 @@ Route::filter('auth.basic', function()
 
 /*
 |--------------------------------------------------------------------------
+| Authentication Filters for Parse SDK
+|--------------------------------------------------------------------------
+|
+| The following filters are used to verify that the user of the current
+| session is logged into this application. The "basic" filter easily
+| integrates HTTP Basic authentication for quick with Parse SDK, simple checking.
+|
+*/
+
+Route::filter('parseAuth', function()
+{
+    $testSession = Session::get('userSession');
+    if ($testSession!="") {
+        // do stuff with the user
+        $aa="";
+    } else {
+        // show the signup or login page
+        $bb="";
+        return Redirect::to('login');
+    }
+});
+
+/*
+|--------------------------------------------------------------------------
 | Guest Filter
 |--------------------------------------------------------------------------
 |

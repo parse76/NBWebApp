@@ -23,7 +23,7 @@ class DashboardController extends BaseController {
     public function __construct()
     {
         ParseClient::initialize(APP_ID, REST_KEY, MASTER_KEY);
-//        $this->beforeFilter('parseAuth');
+        $this->beforeFilter('parseAuth');
     }
 
     public function index()

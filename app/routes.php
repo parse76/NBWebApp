@@ -24,14 +24,23 @@ use Illuminate\Support\Collection;
 |
 */
 
+//Route::get('/', function()
+//{
+//	return View::make('dashboard.index');
+//});
+//
+//Route::get('/login', function()
+//{
+//    return View::make('login');
+//});
+
 Route::get('/', function()
 {
-	return View::make('dashboard.index');
-});
-
-Route::get('/login', function()
-{
-    return View::make('login');
+    return Redirect::to('dashboard');
 });
 
 Route::get('dashboard', 'DashboardController@index');
+
+Route::get('login', 'HomeController@login');
+Route::get('logout', 'HomeController@logout');
+Route::post('authen', 'HomeController@authenticate');

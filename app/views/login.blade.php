@@ -14,20 +14,13 @@
 <link rel="icon" type="image/png" href="{{ asset('assets/images/favicons/favicon-32x32.png')}}" sizes="32x32">
 <meta name="msapplication-TileColor" content="#da532c">
 <!-- Bootstrap -->
-<link href="{{ asset('assets/bs3/css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{ asset('assets/css/style-responsive.css')}}" rel="stylesheet">
 <link href="{{ asset('assets/css/atom-style.css')}}" rel="stylesheet">
 <link href="{{ asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/loginform.css')}}" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
-<style>
-html, body {
-	height: 100%;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 100;
-	background: #f7f7f7;
-}
-</style>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -35,48 +28,94 @@ html, body {
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                    <h1>Log in with your email account</h1>
+                        <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="key" class="sr-only">Password</label>
+                                <input type="password" name="key" id="key" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <span class="character-checkbox" onclick="showPassword()"></span>
+                                <span class="label">Show password</span>
+                            </div>
+                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                        </form>
+                        <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+                        <hr>
+                    </div>
+                </div> <!-- /.col-xs-12 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </section>
 
-<div class="container login-bg">
+    <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Recovery password</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Type your email account</p>
+                    <input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-custom">Recovery</button>
+                </div>
+            </div> <!-- /.modal-content -->
+        </div> <!-- /.modal-dialog -->
+    </div> <!-- /.modal -->
 
-    <div class="container">
-
-          <form class="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me"> Remember me
-              </label>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Page © - 2014</p>
+                    <p>Powered by <strong><a href="http://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a></strong></p>
+                </div>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-          </form>
-
         </div>
+    </footer>
 
-{{--<div style="margin:100px auto 20px;max-width:330px;text-align: center;"><img src="{{ asset('assets/images/logo-green.png')}}"></div>--}}
-{{--        {{ Form::open(array('action' => array('HomeController@authenticate'), 'files' => true, 'class'=>'login-form-signin', 'id'=>'loginForm')) }}--}}
-            {{--<div class="login-wrap">--}}
-                {{--<span style="font-style: italic;"><h5>Email</h5></span>--}}
-                {{--<input type="text" autofocus class="form-control" name="username">--}}
-                {{--<span style="font-style: italic;"><h5>Password</h5></span>--}}
-                {{--<input type="password" class="form-control" name="password">--}}
-
-                {{--<div style="margin-bottom: 10px;">--}}
-                    {{--<a href="#myModal" data-toggle="modal"> Forgot Password?</a>--}}
-                {{--</div>--}}
-                {{--<button type="submit" class="btn btn-round btn-success">Sign in</button>--}}
-            {{--</div>--}}
-{{--        {{ Form::close() }}--}}
-    </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{ asset('assets/js/jquery-1.10.2.js')}}"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ asset('assets/bs3/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('assets/js/jquery.js')}}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('assets/js/retina.min.js')}}"></script>
+<script>
+    function showPassword() {
+
+        var key_attr = $('#key').attr('type');
+
+        if(key_attr != 'text') {
+
+            $('.checkbox').addClass('show');
+            $('#key').attr('type', 'text');
+
+        } else {
+
+            $('.checkbox').removeClass('show');
+            $('#key').attr('type', 'password');
+
+        }
+
+    }
+</script>
+
 </body>
 </html>
