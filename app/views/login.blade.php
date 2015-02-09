@@ -36,14 +36,15 @@
                 <div class="col-xs-12">
                     <div class="form-wrap">
                     <h1>Log in with your email account</h1>
+                    {{ Form::open(array('action' => array('HomeController@authenticate'), 'files' => true, 'class'=>'login-form-signin', 'id'=>'loginForm')) }}
                         <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
+                                <input type="email" name="username" id="email" class="form-control" placeholder="somebody@example.com">
                             </div>
                             <div class="form-group">
                                 <label for="key" class="sr-only">Password</label>
-                                <input type="password" name="key" id="key" class="form-control" placeholder="Password">
+                                <input type="password" name="password" id="key" class="form-control" placeholder="Password">
                             </div>
                             <div class="checkbox">
                                 <span class="character-checkbox" onclick="showPassword()"></span>
@@ -53,6 +54,7 @@
                         </form>
                         <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
                         <hr>
+                    {{ Form::close() }}
                     </div>
                 </div> <!-- /.col-xs-12 -->
             </div> <!-- /.row -->
@@ -85,8 +87,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>Page © - 2014</p>
-                    <p>Powered by <strong><a href="http://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a></strong></p>
+                    <p>Neighbor Network © - 2015</p>
+                    <p>Powered by <strong><a href="https://www.facebook.com/weerayoot.ngandee" target="_blank">Weerayoot Ngandee</a></strong></p>
                 </div>
             </div>
         </div>
