@@ -41,6 +41,11 @@ Route::get('/', function()
 
 Route::get('dashboard', 'DashboardController@index');
 
+Route::get('users', 'UserController@index');
+
+Route::get('properties', 'PropertyController@index');
+
+
 Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 Route::post('authen', 'HomeController@authenticate');

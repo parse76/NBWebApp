@@ -10,7 +10,7 @@
     <title>
 
     @section('title')
-    | SB Admin - Bootstrap Admin Template
+    | Neighbor Network
     @show
 
     </title>
@@ -56,7 +56,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Neighbor Network Admin</a>
+            <a class="navbar-brand" href="{{ URL::to('dashboard') }}">Neighbor Network Admin</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -168,6 +168,14 @@
                 <li>
                     <a href="{{ URL::to('dashboard') }}" class="{{ (Request::is('dashboard') || Request::is('dashboard/*') ? 'active' : '') }}">
                     <i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="{{ URL::to('properties') }}" class="{{ (Request::is('properties') || Request::is('properties/*') ? 'active' : '') }}">
+                    <i class="fa fa-fw fa-building"></i> Properties</a>
+                </li>
+                <li>
+                    <a href="{{ URL::to('users') }}" class="{{ (Request::is('users') || Request::is('users/*') ? 'active' : '') }}">
+                    <i class="fa fa-fw fa-user"></i> Users</a>
                 </li>
                 {{--<li>--}}
                     {{--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>--}}
