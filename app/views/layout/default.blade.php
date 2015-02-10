@@ -177,6 +177,14 @@
                     <a href="{{ URL::to('users') }}" class="{{ (Request::is('users') || Request::is('users/*') ? 'active' : '') }}">
                     <i class="fa fa-fw fa-user"></i> Users</a>
                 </li>
+                <li>
+                    <a href="{{ URL::to('reports') }}" class="{{ (Request::is('reports') || Request::is('reports/*') ? 'active' : '') }}">
+                    <i class="fa fa-fw fa-flag"></i> Reports</a>
+                </li>
+                <li>
+                    <a href="{{ URL::to('notifications') }}" class="{{ (Request::is('notifications') || Request::is('notifications/*') ? 'active' : '') }}">
+                    <i class="fa fa-fw fa-envelope-o"></i> Notifications</a>
+                </li>
                 {{--<li>--}}
                     {{--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>--}}
                 {{--</li>--}}

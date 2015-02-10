@@ -45,6 +45,10 @@ Route::get('users', 'UserController@index');
 
 Route::get('properties', 'PropertyController@index');
 
+Route::get('notifications', 'NotificationController@index');
+
+Route::get('reports', 'ReportController@index');
+
 
 Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
