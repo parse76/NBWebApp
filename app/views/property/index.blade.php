@@ -17,12 +17,13 @@
 <div class="container">
 	<div class="row">
         <div class="col-md-12">
-        <h4>Bootstrap Snipp for Datatable</h4>
+        <h4>Properties List</h4>
+        <a href="{{ URL::to('addNewProperty') }}" class="btn btn-xs btn-success">Add New Property</a>
         <div class="table-responsive">
             <table id="mytable" class="table table-bordred table-striped">
                 <thead>
                     <th><input type="checkbox" id="checkall" /></th>
-                    <th>First Name</th>
+                    <th>Name</th>
                     <th>Last Name</th>
                     <th>Address</th>
                     <th>Email</th>

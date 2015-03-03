@@ -30,4 +30,14 @@ class PropertyController extends BaseController {
     {
         return View::make('property.index');
     }
+
+    public function addNewProperty()
+    {
+        return View::make('property.add');
+    }
+
+    public function submitNewProperty()
+    {
+
+    }
 }

@@ -18,86 +18,50 @@
 	<div class="row">
         <div class="col-md-12">
         <h4>Bootstrap Snipp for Datatable</h4>
-        <div class="table-responsive">
-            <table id="mytable" class="table table-bordred table-striped">
-                <thead>
-                    <th><input type="checkbox" id="checkall" /></th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-                 </tbody>
-            </table>
-
-            <div class="clearfix"></div>
-                <ul class="pagination pull-right">
-                    <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                </ul>
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Recent Activity</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <span class="badge">just now</span>
+                            <i class="fa fa-exclamation-triangle"></i> Calendar updated
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">4 minutes ago</span>
+                            <i class="fa fa-exclamation-triangle"></i> Commented on a post
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">23 minutes ago</span>
+                            <i class="fa fa-exclamation-triangle"></i> Order 392 shipped
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">46 minutes ago</span>
+                            <i class="fa fa-exclamation-triangle"></i> Invoice 653 has been paid
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">1 hour ago</span>
+                            <i class="fa fa-exclamation-triangle"></i> A new user has been added
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">2 hours ago</span>
+                            <i class="fa fa-exclamation-triangle"></i> Completed task: "pick up dry cleaning"
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">yesterday</span>
+                            <i class="fa fa-exclamation-triangle"></i> Saved the world
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">two days ago</span>
+                            <i class="fa fa-exclamation-triangle"></i> Completed task: "fix error on sales page"
+                        </a>
+                    </div>
+                    <div class="text-right">
+                        <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
 	</div>
