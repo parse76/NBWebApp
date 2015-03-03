@@ -46,6 +46,8 @@ Route::get('users', 'UserController@index');
 Route::get('properties', 'PropertyController@index');
 Route::get('addNewProperty', 'PropertyController@addNewProperty');
 Route::post('submitNewProperty', 'PropertyController@submitNewProperty');
+Route::get('property/detail/{id}', 'PropertyController@editProperty');
+Route::post('submitEditProperty', 'PropertyController@submitEditProperty');
 
 Route::get('notifications', 'NotificationController@index');
 
