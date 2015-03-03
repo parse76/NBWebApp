@@ -38,6 +38,24 @@ class PropertyController extends BaseController {
 
     public function submitNewProperty()
     {
+        try {
+            // Create Property Obj
+            $propertyObj = new ParseObject("Property");
+            $propertyObj->set("name", trim(Input::get('property_name')));
+            $propertyObj->set("ownBy", trim(Input::get('constuction_by')));
+            $propertyObj->set("address", trim(Input::get('address')));
+            $propertyObj->set("province", trim(Input::get('province')));
+            $propertyObj->set("postcode", trim(Input::get('postcode')));
+            $propertyObj->set("country", trim(Input::get('country')));
+            $propertyObj->set("latitude", trim(Input::get('latitude')));
+            $propertyObj->set("logitude", trim(Input::get('logitude')));
+            $propertyObj->save();
 
+            return Redirect::to('properties');
+            //echo 'New object created with objectId: ' . $store->getObjectId();
+        } catch (ParseException $ex) {
+            //echo 'Failed to create new object, with error message: ' + $ex->getMessage();
+            return View::make('error');
+        }
     }
 }
