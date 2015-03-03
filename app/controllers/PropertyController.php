@@ -38,8 +38,6 @@ class PropertyController extends BaseController {
         catch (ParseException $ex) {
             return View::make('error');
         }
-
-//        return View::make('property.index');
     }
 
     public function addNewProperty()

@@ -34,6 +34,8 @@
         <!-- Custom Fonts -->
         <link href="{{ asset('assets/font-awesome-4.1.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
+        <link href="{{ asset('assets/css/custom.css')}}" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

@@ -28,6 +28,16 @@ class UserController extends BaseController {
 
     public function index()
     {
-        return View::make('user.index');
+        try{
+            //Get Property list.
+            $userQuery =  ParseUser::query();
+            $userQuery->equalTo("isAdmin", false);
+            $userArray = $userQuery->find();
+
+            return View::make('user.index')->with(array('userArray' => $userArray));
+        }
+        catch (ParseException $ex) {
+            return View::make('error');
+        }
     }
 }

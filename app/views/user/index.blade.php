@@ -22,8 +22,9 @@
             <table id="mytable" class="table table-bordred table-striped">
                 <thead>
                     <th><input type="checkbox" id="checkall" /></th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>User Avatar</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
                     <th>Address</th>
                     <th>Email</th>
                     <th>Contact</th>
@@ -31,60 +32,33 @@
                     <th>Delete</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
+                    @foreach($userArray as $obj)
+                        <tr>
+                            <td><input type="checkbox" class="checkthis" /></td>
+                            <td>
+                                <div class="circle user-circle"><img src="{{$obj->get("avatar")->getURL()}}" style="width: inherit; height: inherit;"></div>
+                            </td>
+                            <td>{{$obj->get('firstname')}}</td>
+                            <td>{{$obj->get('lastname')}}</td>
+                            <td>{{$obj->get('email')}}, {{$obj->get('email')}}, {{$obj->get('email')}}</td>
+                            <td>{{$obj->get('email')}}</td>
+                            <td>{{$obj->get('email')}}</td>
+                            <td>
+                                <p data-placement="top" data-toggle="tooltip" title="Edit">
+                                    <a class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" href="{{ url('property/detail', $obj->getObjectId()) }}">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </a>
+                                </p>
+                            </td>
+                            <td>
+                                <p data-placement="top" data-toggle="tooltip" title="Delete">
+                                    <a class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" href="">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                        @endforeach
                  </tbody>
             </table>
 
