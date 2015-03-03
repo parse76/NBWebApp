@@ -40,6 +40,19 @@
 
                     <!-- Text input-->
                     <div class="form-group">
+                        <label class="col-sm-2 control-label" for="textinput">Contact</label>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="Contact" class="form-control" name="contact">
+                        </div>
+
+                        <label class="col-sm-2 control-label" for="textinput">Email</label>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="Email" class="form-control" name="email">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
                         <label class="col-sm-2 control-label" for="textinput">Address</label>
                         <div class="col-sm-10">
                             <input type="text" placeholder="Address" class="form-control" name="address">

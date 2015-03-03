@@ -28,7 +28,18 @@ class PropertyController extends BaseController {
 
     public function index()
     {
-        return View::make('property.index');
+        try{
+            //Get Property list.
+            $propertyQuery = new ParseQuery("Property");
+            $propertyArray = $propertyQuery->find();
+
+            return View::make('property.index')->with(array('propertyArray' => $propertyArray));
+        }
+        catch (ParseException $ex) {
+            return View::make('error');
+        }
+
+//        return View::make('property.index');
     }
 
     public function addNewProperty()
@@ -44,6 +55,8 @@ class PropertyController extends BaseController {
             $propertyObj->set("name", trim(Input::get('property_name')));
             $propertyObj->set("ownBy", trim(Input::get('constuction_by')));
             $propertyObj->set("address", trim(Input::get('address')));
+            $propertyObj->set("contact", trim(Input::get('contact')));
+            $propertyObj->set("email", trim(Input::get('email')));
             $propertyObj->set("province", trim(Input::get('province')));
             $propertyObj->set("postcode", trim(Input::get('postcode')));
             $propertyObj->set("country", trim(Input::get('country')));

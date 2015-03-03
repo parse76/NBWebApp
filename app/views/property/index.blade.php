@@ -23,8 +23,8 @@
             <table id="mytable" class="table table-bordred table-striped">
                 <thead>
                     <th><input type="checkbox" id="checkall" /></th>
-                    <th>Name</th>
-                    <th>Last Name</th>
+                    <th>Property Name</th>
+                    <th>Construted By</th>
                     <th>Address</th>
                     <th>Email</th>
                     <th>Contact</th>
@@ -32,60 +32,18 @@
                     <th>Delete</th>
                 </thead>
                 <tbody>
+                    @foreach($propertyArray as $obj)
                     <tr>
                         <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
+                        <td>{{$obj->get('name')}}</td>
+                        <td>{{$obj->get('ownBy')}}</td>
+                        <td>{{$obj->get('address')}}, {{$obj->get('province')}}, {{$obj->get('postcode')}}</td>
+                        <td>{{$obj->get('email')}}</td>
+                        <td>{{$obj->get('contact')}}</td>
                         <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                         <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
                     </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
+                    @endforeach
                  </tbody>
             </table>
 
