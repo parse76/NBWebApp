@@ -15,6 +15,22 @@
 @section('content')
 <div id="page-wrapper">
 <div class="container">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Report
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="{{ URL::to('dashboard') }}">Dashboard</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> Report
+                </li>
+            </ol>
+        </div>
+    </div>
 	<div class="row">
         <div class="col-md-12">
         <h4>Bootstrap Snipp for Datatable</h4>

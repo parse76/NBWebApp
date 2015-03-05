@@ -15,6 +15,22 @@
 @section('content')
 <div id="page-wrapper">
 <div class="container">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                User
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="{{ URL::to('dashboard') }}">Dashboard</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> User
+                </li>
+            </ol>
+        </div>
+    </div>
 	<div class="row">
         <div class="col-md-12">
         <h4>Bootstrap Snipp for Datatable</h4>
@@ -28,8 +44,7 @@
                     <th>Address</th>
                     <th>Email</th>
                     <th>Contact</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Details</th>
                 </thead>
                 <tbody>
                     @foreach($userArray as $obj)
@@ -45,18 +60,18 @@
                             <td>{{$obj->get('email')}}</td>
                             <td>
                                 <p data-placement="top" data-toggle="tooltip" title="Edit">
-                                    <a class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" href="{{ url('property/detail', $obj->getObjectId()) }}">
-                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    <a class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" href="{{ url('user/detail', $obj->getObjectId()) }}">
+                                        <span class="fa fa-eye"></span>
                                     </a>
                                 </p>
                             </td>
-                            <td>
-                                <p data-placement="top" data-toggle="tooltip" title="Delete">
-                                    <a class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" href="">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </a>
-                                </p>
-                            </td>
+                            {{--<td>--}}
+                                {{--<p data-placement="top" data-toggle="tooltip" title="Delete">--}}
+                                    {{--<a class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" href="">--}}
+                                        {{--<span class="glyphicon glyphicon-trash"></span>--}}
+                                    {{--</a>--}}
+                                {{--</p>--}}
+                            {{--</td>--}}
                         </tr>
                         @endforeach
                  </tbody>

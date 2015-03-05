@@ -15,6 +15,22 @@
 @section('content')
 
 <div id="page-wrapper">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Property
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="{{ URL::to('dashboard') }}">Dashboard</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> Property Detail
+                </li>
+            </ol>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             {{ Form::open(array('action' => array('PropertyController@submitEditProperty'), 'files' => true, 'class'=>'form-horizontal', 'id'=>'editProperty')) }}
@@ -97,7 +113,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-danger">Cancel</button>
+                                <a class="btn btn-danger" data-title="Edit" href="{{ url('properties') }}">Cancel</a>
                                 <button type="submit" class="btn btn-success">Save</button>
                             </div>
                         </div>

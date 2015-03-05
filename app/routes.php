@@ -42,6 +42,7 @@ Route::get('/', function()
 Route::get('dashboard', 'DashboardController@index');
 
 Route::get('users', 'UserController@index');
+Route::get('user/detail/{id}', 'UserController@userDetail');
 
 Route::get('properties', 'PropertyController@index');
 Route::get('addNewProperty', 'PropertyController@addNewProperty');
