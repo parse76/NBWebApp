@@ -9,6 +9,8 @@
 @section('header_styles')
     <!--page level css -->
     <!--end of page level css-->
+    <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('assets/js/qrcode.min.js') }}" type="text/javascript"></script>
 @stop
 
 
@@ -111,6 +113,21 @@
                     </div>
 
                     <div class="form-group">
+
+                        <label class="col-sm-2 control-label" for="textinput">QR Code</label>
+                        <div class="col-sm-4">
+                            <div id="qrcode"></div>
+                            <script type="text/javascript">
+                                    new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+                                </script>
+                        </div>
+
+                        <div>
+                            <a class="btn btn-success" data-title="Edit" href="{{ url('properties') }}">Print QR Code</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="pull-right">
                                 <a class="btn btn-danger" data-title="Edit" href="{{ url('properties') }}">Cancel</a>
@@ -129,5 +146,7 @@
 
     {{-- page level scripts --}}
     @section('footer_scripts')
+
+
 
 @stop

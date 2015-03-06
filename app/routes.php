@@ -54,6 +54,9 @@ Route::get('notifications', 'NotificationController@index');
 
 Route::get('reports', 'ReportController@index');
 
+Route::get('announcement', 'AnnouncementController@index');
+Route::get('addAnnouncement', 'AnnouncementController@addAnnounce');
+Route::post('submitAnnounce', 'AnnouncementController@submitAnnounce');
 
 Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');

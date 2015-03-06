@@ -63,18 +63,18 @@ class UserController extends BaseController {
                 {
                     // PostImage By user
                     $queryImage = new ParseQuery("PostImageActivity");
-                    $queryImage->includeKey("postID");
-                    $queryImage->equalTo("postID", $object);
+                    $queryImage->includeKey("postObject");
+                    $queryImage->equalTo("postObject", $object);
                     $imagePost = $queryImage->find();
 
-                    $postItem = $this->getPostImageArray($imagePost[key($imagePost)]);
+                    $postImage = $this->getPostImageArray($imagePost[key($imagePost)]);
 
                     $postObj = array(
 //                        'likeCount' => $object->get('likeCount'),
 //                        'postTitle' => $object->get('likeCount'),
                         'postDescription' => $object->get('postDescription'),
 //                        'postLocation' => $object->get('likeCount'),
-                        'postImage' => $postItem,
+                        'postImage' => $postImage,
                         'isPostWithImage' => $object->get('isPostWithImage'),
                         'postBy' => $user->get('firstname'),
                         'timestamp' => $object->get('timestamp'),

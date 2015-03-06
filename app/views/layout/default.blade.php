@@ -36,6 +36,7 @@
         <link href="{{ asset('assets/font-awesome-4.1.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
         <link href="{{ asset('assets/css/custom.css')}}" rel="stylesheet">
+{{--        <link href="{{ asset('assets/css/atom-style.css')}}" rel="stylesheet">--}}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -89,6 +90,10 @@
                 <li>
                     <a href="{{ URL::to('dashboard') }}" class="{{ (Request::is('dashboard') || Request::is('dashboard/*') ? 'active' : '') }}">
                     <i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="{{ URL::to('announcement') }}" class="{{ (Request::is('announcement') || Request::is('announcement/*') ? 'active' : '') }}">
+                    <i class="fa fa-bullhorn"></i> Announcement</a>
                 </li>
                 <li>
                     <a href="{{ URL::to('properties') }}" class="{{ (Request::is('properties') || Request::is('properties/*') ? 'active' : '') }}">

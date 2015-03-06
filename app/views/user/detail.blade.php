@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-    Add New Property
+    User's details
     @parent
 @stop
 
@@ -94,7 +94,7 @@
                                     <label class="col-md-4 control-label">Email :</label>
                                     <div class="col-md-8">
                                         {{$user->get('firstname')}}
-{{--                                        {{count($userPostHistory)}}--}}
+                                        {{count($userPostHistory)}}
                                     </div>
                                 </div>
 
@@ -113,15 +113,75 @@
                                     <th class="col-md-1"><input type="checkbox" id="postSelect" name="postSelect" class="flat-red"/></th>
                                     <th class="col-md-2">Create At</th>
                                     <th class="col-md-2">Post</th>
-                                    <th class="col-md-2">Actions</th>
+                                    {{--<th class="col-md-2">Actions</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            TEST
-                                        </td>
-                                    </tr>
+                                    <!-- Loop for postArray -->
+                                     <?php
+                                     for($numCount = 0; $numCount<count($userPostHistory); $numCount++)
+                                     {
+                                     ?>
+                                     <tr>
+                                         <td><input type="checkbox" id="postSelect" name="postSelect" class="flat-red"/></td>
+                                         <td>
+                                             <div class="col-lg-1">
+                                                 <span data-localtime-format="yyyy/MM/dd HH:mm">{{date("Y-m-d H:i",$userPostHistory[$numCount]['timestamp'])}}</span>
+                                             </div>
+                                         </td>
+                                         <td>
+                                             <?php
+                                             if ($userPostHistory[$numCount]['isPostWithImage']  == true)
+                                             {
+                                             ?>
+                                             <div class="col-lg-12">
+                                                 <div class="col-lg-6">
+                                                     <br/>
+                                                     <div class="row">
+                                                         <img src="{{$userPostHistory[$numCount]['postImage']['postImage']->getURL('image')}}" alt="postImage" style="width: auto; height: auto;"/>
+                                                     </div>
+                                                     <br/>
+                                                     <div class="row">
+                                                         <div class="col-lg-4">
+{{--                                                             <img src="{{$user->get('profileImage')->getURL()}}" alt="logo" style="width: 100px; height: 100px;"/>--}}
+                                                         </div>
+                                                         <div class="col-lg-8">
+                                                             <label for="" style="display: inline-block;">{{$userPostHistory[$numCount]['postDescription']}}</label>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 <br/>
+                                             </div>
+                                             <?php
+                                             }
+                                             else
+                                             {
+                                             ?>
+                                             <div class="col-lg-12">
+                                                 <div class="col-lg-8 nopadding">
+                                                     <br/>
+                                                     <div class="box-info">
+                                                         <h4 class="nopadding" class="label label-default">{{$userPostHistory[$numCount]['postBy']}}</h4><br>
+                                                         <label for="">{{$userPostHistory[$numCount]['postDescription']}}</label>
+                                                     </div>
+                                                 </div>
+                                                 <div class="col-lg-4"></div>
+                                             </div>
+                                             <?php
+                                             }
+                                             ?>
+                                         </td>
+                                         {{--<td style="vertical-align: top;">--}}
+                                             {{--<div class="btn-group btn-group-xs" style="margin-top: 20px;">--}}
+                                                 {{--<button class="btn btn-responsive button-alignment btn-warning various deletePost" rel="{{url('post/delete', $userPostHistory[$numCount]['postId'])}}" style="background-color: #a1d600; border: 0px;">--}}
+                                                     {{--Remove--}}
+                                                 {{--</button>--}}
+                                             {{--</div>--}}
+                                         {{--</td>--}}
+                                     </tr>
+                                     <?php
+                                     }
+                                     ?>
                                 </tbody>
                             </table>
                         </div>
