@@ -19,89 +19,96 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                Report
+                Announcement
             </h1>
             <ol class="breadcrumb">
                 <li>
                     <i class="fa fa-dashboard"></i>  <a href="{{ URL::to('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="active">
-                    <i class="fa fa-file"></i> Report
+                    <i class="fa fa-file"></i> Announcement
                 </li>
             </ol>
         </div>
     </div>
 	<div class="row">
         <div class="col-md-12">
-        <h4>Bootstrap Snipp for Datatable</h4>
+        <h4>Recently Announced</h4>
+        <a href="{{ URL::to('addAnnouncement') }}" class="btn btn-xs btn-success">Create New Announcement</a>
         <div class="table-responsive">
             <table id="mytable" class="table table-bordred table-striped">
                 <thead>
-                    <th><input type="checkbox" id="checkall" /></th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Created At</th>
+                    <th>Title</th>
+                    <th>Descriotion</th>
                 </thead>
                 <tbody>
+                    <!-- Loop for postArray -->
+                    <?php
+                    for($numCount = 0; $numCount<count($userPostHistory); $numCount++)
+                    {
+                    ?>
                     <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                     <td><input type="checkbox" id="postSelect" name="postSelect" class="flat-red"/></td>
+                     <td>
+                         <div class="col-lg-1">
+                             <span data-localtime-format="yyyy/MM/dd HH:mm">{{date("Y-m-d H:i",$userPostHistory[$numCount]['timestamp'])}}</span>
+                         </div>
+                     </td>
+                     <td>
+                         <?php
+                         if ($userPostHistory[$numCount]['isPostWithImage']  == true)
+                         {
+                         ?>
+                         <div class="col-lg-12">
+                             <div class="col-lg-6">
+                                 <br/>
+                                 <div class="row">
+                                     <img src="{{$userPostHistory[$numCount]['postImage']['postImage']->getURL('image')}}" alt="postImage" style="width: auto; height: auto;"/>
+                                 </div>
+                                 <br/>
+                                 <div class="row">
+                                     <div class="col-lg-4">
+                    {{--                                                             <img src="{{$user->get('profileImage')->getURL()}}" alt="logo" style="width: 100px; height: 100px;"/>--}}
+                                     </div>
+                                     <div class="col-lg-8">
+                                         <label for="" style="display: inline-block;">{{$userPostHistory[$numCount]['postDescription']}}</label>
+                                     </div>
+                                 </div>
+                             </div>
+                             <br/>
+                         </div>
+                         <?php
+                         }
+                         else
+                         {
+                         ?>
+                         <div class="col-lg-12">
+                             <div class="col-lg-8 nopadding">
+                                 <br/>
+                                 <div class="box-info">
+                                     <h4 class="nopadding" class="label label-default">{{$userPostHistory[$numCount]['postBy']}}</h4><br>
+                                     <label for="">{{$userPostHistory[$numCount]['postDescription']}}</label>
+                                 </div>
+                             </div>
+                             <div class="col-lg-4"></div>
+                         </div>
+                         <?php
+                         }
+                         ?>
+                     </td>
+                     {{--<td style="vertical-align: top;">--}}
+                         {{--<div class="btn-group btn-group-xs" style="margin-top: 20px;">--}}
+                             {{--<button class="btn btn-responsive button-alignment btn-warning various deletePost" rel="{{url('post/delete', $userPostHistory[$numCount]['postId'])}}" style="background-color: #a1d600; border: 0px;">--}}
+                                 {{--Remove--}}
+                             {{--</button>--}}
+                         {{--</div>--}}
+                     {{--</td>--}}
                     </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-
-                    <tr>
-                        <td><input type="checkbox" class="checkthis" /></td>
-                        <td>Mohsin</td>
-                        <td>Irshad</td>
-                        <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                        <td>isometric.mohsin@gmail.com</td>
-                        <td>+923335586757</td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                    </tr>
-                 </tbody>
+                    <?php
+                    }
+                    ?>
+                </tbody>
             </table>
 
             <div class="clearfix"></div>
