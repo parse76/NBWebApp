@@ -58,14 +58,14 @@
                         <td>{{$obj->get('contact')}}</td>
                         <td>
                             <p data-placement="top" data-toggle="tooltip" title="Edit">
-                                <a class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" href="{{ url('property/detail', $obj->getObjectId()) }}">
+                                <a class="btn btn-outline btn-primary btn-xs" data-title="Edit"  data-target="#edit" href="{{ url('property/detail', $obj->getObjectId()) }}">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </a>
                             </p>
                         </td>
                         <td>
                             <p data-placement="top" data-toggle="tooltip" title="Delete">
-                                <a class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" href="">
+                                <a class="btn btn-outline btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" href="">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
                             </p>

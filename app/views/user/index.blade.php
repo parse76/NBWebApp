@@ -60,7 +60,7 @@
                             <td>{{$obj->get('email')}}</td>
                             <td>
                                 <p data-placement="top" data-toggle="tooltip" title="Edit">
-                                    <a class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" href="{{ url('user/detail', $obj->getObjectId()) }}">
+                                    <a class="btn btn-outline btn-primary btn-xs" data-title="Edit" data-target="#edit" href="{{ url('user/detail', $obj->getObjectId()) }}">
                                         <span class="fa fa-eye"></span>
                                     </a>
                                 </p>

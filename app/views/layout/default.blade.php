@@ -18,7 +18,7 @@
     <meta name="description" content="">
         <!-- Bootstrap Core CSS -->
         <!-- global css -->
-        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- MetisMenu CSS -->
         <link href="{{ asset('assets/css/plugins/metisMenu/metisMenu.min.css')}}" rel="stylesheet" type="text/css" />
@@ -59,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">Neighbor Network</a>
             </div>
             <!-- /.navbar-header -->
 
