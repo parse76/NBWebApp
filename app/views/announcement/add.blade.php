@@ -13,8 +13,8 @@
 
 
 @section('content')
-<div id="page-wrapper">
-<div class="container">
+<div id="page-wrapper" style="min-height: 414px;">
+<div class="container-fluid">
     <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-12">

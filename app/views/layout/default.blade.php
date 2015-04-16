@@ -21,21 +21,21 @@
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- MetisMenu CSS -->
-        <link href="{{ asset('assets/css/plugins/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/css/plugins/metisMenu/metisMenu.min.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- Timeline CSS -->
-        <link href="{{ asset('assets/css/plugins/timeline.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/css/plugins/timeline.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- Custom CSS -->
-        <link href="{{ asset('assets/css/sb-admin.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/css/sb-admin-2.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- Morris Charts CSS -->
-        <link href="{{ asset('assets/css/plugins/morris.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/css/plugins/morris.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- Custom Fonts -->
-        <link href="{{ asset('assets/font-awesome-4.1.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/font-awesome-4.1.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
 
-        <link href="{{ asset('assets/css/custom.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/css/custom.css')}}" rel="stylesheet" type="text/css" />
 {{--        <link href="{{ asset('assets/css/atom-style.css')}}" rel="stylesheet">--}}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -48,110 +48,294 @@
 
 <body>
 
-<div id="wrapper">
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ URL::to('dashboard') }}">Neighbor Network Admin</a>
-        </div>
-        <!-- Top Menu Items -->
-        <ul class="nav navbar-right top-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="small-text">John Smith</span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="{{ URL::to('logout') }}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav side-nav">
-                <li>
-                    <a href="{{ URL::to('dashboard') }}" class="{{ (Request::is('dashboard') || Request::is('dashboard/*') ? 'active' : '') }}">
-                    <i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
                 </li>
-                <li>
-                    <a href="{{ URL::to('announcement') }}" class="{{ (Request::is('announcement') || Request::is('announcement/*') ? 'active' : '') }}">
-                    <i class="fa fa-bullhorn"></i> Announcement</a>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
                 </li>
-                <li>
-                    <a href="{{ URL::to('properties') }}" class="{{ (Request::is('properties') || Request::is('properties/*') ? 'active' : '') }}">
-                    <i class="fa fa-fw fa-building"></i> Properties</a>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
                 </li>
-                <li>
-                    <a href="{{ URL::to('users') }}" class="{{ (Request::is('users') || Request::is('users/*') ? 'active' : '') }}">
-                    <i class="fa fa-fw fa-user"></i> Users</a>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
                 </li>
-                <li>
-                    <a href="{{ URL::to('reports') }}" class="{{ (Request::is('reports') || Request::is('reports/*') ? 'active' : '') }}">
-                    <i class="fa fa-fw fa-flag"></i> Reports</a>
-                </li>
-                <li>
-                    <a href="{{ URL::to('notifications') }}" class="{{ (Request::is('notifications') || Request::is('notifications/*') ? 'active' : '') }}">
-                    <i class="fa fa-fw fa-envelope-o"></i> Notifications</a>
-                </li>
+                <!-- /.dropdown -->
             </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-    {{--<div id="page-wrapper">--}}
-        {{--<div class="container-fluid">--}}
+            <!-- /.navbar-top-links -->
 
-            {{--<!-- Page Heading -->--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-lg-12">--}}
-                    {{--<h1 class="page-header">--}}
-                        {{--Blank Page--}}
-                        {{--<small>Subheading</small>--}}
-                    {{--</h1>--}}
-                    {{--<ol class="breadcrumb">--}}
-                        {{--<li>--}}
-                            {{--<i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="active">--}}
-                            {{--<i class="fa fa-file"></i> Blank Page--}}
-                        {{--</li>--}}
-                    {{--</ol>--}}
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="{{ URL::to('dashboard') }}" class="{{ (Request::is('dashboard') || Request::is('dashboard/*') ? 'active' : '') }}">
+                            <i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('announcement') }}" class="{{ (Request::is('announcement') || Request::is('announcement/*') ? 'active' : '') }}">
+                            <i class="fa fa-bullhorn"></i> Announcement</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('properties') }}" class="{{ (Request::is('properties') || Request::is('properties/*') ? 'active' : '') }}">
+                            <i class="fa fa-fw fa-building"></i> Properties</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('users') }}" class="{{ (Request::is('users') || Request::is('users/*') ? 'active' : '') }}">
+                            <i class="fa fa-fw fa-user"></i> Users</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('reports') }}" class="{{ (Request::is('reports') || Request::is('reports/*') ? 'active' : '') }}">
+                            <i class="fa fa-fw fa-flag"></i> Reports</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('notifications') }}" class="{{ (Request::is('notifications') || Request::is('notifications/*') ? 'active' : '') }}">
+                            <i class="fa fa-fw fa-envelope-o"></i> Notifications</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        @yield('content')
+
+        {{--<!-- Page Content -->--}}
+        {{--<div id="page-wrapper" style="min-height: 414px;">--}}
+            {{--<div class="container-fluid">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-lg-12">--}}
+                        {{--<h1 class="page-header">Blank</h1>--}}
+                    {{--</div>--}}
+                    {{--<!-- /.col-lg-12 -->--}}
                 {{--</div>--}}
+                {{--<!-- /.row -->--}}
             {{--</div>--}}
-            {{--<!-- /.row -->--}}
-
+            {{--<!-- /.container-fluid -->--}}
         {{--</div>--}}
-        {{--<!-- /.container-fluid -->--}}
+        {{--<!-- /#page-wrapper -->--}}
+
     {{--</div>--}}
-    {{--<!-- /#page-wrapper -->--}}
-{{--@yield('header_styles')--}}
+    {{--<!-- /#wrapper -->--}}
 
 
-@yield('content')
+{{--@yield('content')--}}
 
-</div>
+{{--</div>--}}
 <!-- /#wrapper -->
 
 
 <!-- jQuery -->
-<script src="{{ asset('assets/js/jquery.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/js/jquery.js') }}" type="text/javascript"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ asset('assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
